@@ -2,6 +2,7 @@ dar_cakephp_practice_larvata
 
 =======
 
+2014/01/23 add github email to crazylion
 2014/01/23 create the github
 
 
