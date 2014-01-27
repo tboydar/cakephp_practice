@@ -2,7 +2,19 @@ dar_cakephp_practice_larvata
 
 =======
 
+2014/01/27 check vim environment for mysql.dareno.org,  with add, edit,view function....  next step for user login ...
+git clone  https://github.com/crazylion/my-dot-file.git  ~/crazylion_my-dot-file_vim 
+git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle 
+
+mkdir -p ~/.vim/autoload ~/.vim/bundle; 
+curl -Sso ~/.vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
+
+
+
+
+
 2014/01/23 add github email to crazylion
+
 2014/01/23 create the github
 
 
