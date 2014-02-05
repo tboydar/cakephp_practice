@@ -5,3 +5,15 @@ app/tmp/*
 app/[Cc]onfig/core.php
 app/[Cc]onfig/database.php
 !empty
+app/Config/acl.ini.php
+app/Config/acl.php
+app/Config/bootstrap.php
+app/Config/database.php.default
+app/Config/Schema/db_acl.php
+app/Config/Schema/db_acl.sql
+app/Config/email.php.default
+app/Config/Schema/i18n.php
+app/Config/Schema/i18n.sql
+app/Config/routes.php
+app/Config/Schema/sessions.php
+app/Config/Schema/sessions.sql
