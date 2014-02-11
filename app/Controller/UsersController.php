@@ -8,12 +8,13 @@ class UsersController extends AppController {
     }
     public function login(){
         echo "in login()";
+        $this->log('login','debug');
         if($this->request->is('post')){
             if($this->Auth->login()){
                 echo "驗證成功";
             return $this->redirect($this->Auth->redirect());
             }
-        $this->Session->setFlash(__('Invalid username or password, try again'));
+        $this->Session->setFlash(__('使用者帳密錯誤/Invalid username or password, try again'));
         }
     }
 
