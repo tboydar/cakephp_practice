@@ -18,16 +18,14 @@ class PostsController extends AppController{
     }
     public function add() {
         echo "test";
-        if ($this->request->is('post')) {
+        if ($this->request->is('post')) {            
             $this->request->data['Post']['user_id'] = $this->Auth->user('id');
-
-            $this->Post->create();
-
+            //$this->Post->create();
             if ($this->Post->save($this->request->data)) {
                 $this->Session->setFlash(__('Your post has been saved.'));
                 return $this->redirect(array('action' => 'index'));
             }
-            $this->Session->setFlash(__('Unable to add your post.'));
+            //$this->Session->setFlash(__('Unable to add your post.'));
         }
     }
 
