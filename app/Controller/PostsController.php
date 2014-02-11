@@ -17,6 +17,7 @@ class PostsController extends AppController{
         $this->set('post', $post);
     }
     public function add() {
+        echo "test";
         if ($this->request->is('post')) {
             $this->request->data['Post']['user_id'] = $this->Auth->user('id');
 
