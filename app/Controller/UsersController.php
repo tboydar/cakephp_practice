@@ -4,8 +4,14 @@ class UsersController extends AppController {
 
     public function beforeFilter() {
         parent::beforeFilter();
-        $this->Auth->allow('add','logout');
+        $this->Auth->allow('add','logout','login','testLogin');
     }
+
+    public function afterLogin(){
+        App::uses('String', 'Utility');
+        $mseeage = $this->User->find('new message');
+    }
+
     public function login(){
         echo "in login()";
         $this->log('login','debug');
@@ -18,6 +24,13 @@ class UsersController extends AppController {
         }
     }
 
+    public function testLogin(){
+        echo 'begin';
+     $this->redirect("http://www.google.com");        
+        echo "in testLogin";
+        
+        $this->redirect("http://google.com");
+    }
     public function logout(){
         return $this->redirect($this->Auth->logout());
     }
@@ -84,4 +97,3 @@ class UsersController extends AppController {
 
 }
 ?>
-

@@ -3,7 +3,7 @@ class PostsController extends AppController{
     public $helpers = array('Html', 'Form');
     public function index(){
         $this->set('posts', $this->Post->find('all'));
-        //	print_r("hi:".$posts);
+    echo 'hi';
     }
 
     public function view($id = null) {
@@ -51,6 +51,23 @@ class PostsController extends AppController{
             $this->request->data = $post;
         }
         // body
+    }
+
+    public function  isAuthorized($user) {
+        // All registered users can add posts
+        if ($this->action === 'add') {
+            return true;
+        }
+
+        // The owner of a post can edit and delete it
+        if (in_array($this->action, array('edit', 'delete'))) {
+            $postId = $this->request->params['pass'][0];
+            if ($this->Post->isOwnedBy($postId, $user['id'])) {
+                return true;
+            }
+        }
+
+        return parent::isAuthorized($user);
     }
 
 }
